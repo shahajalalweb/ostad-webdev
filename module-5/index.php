@@ -128,12 +128,12 @@ function selectUser($data) {
                             <?php if (isAdmin() || isEditor()) { ?>
                                 <td class="px-4 py-2">
                                     <?php if (isAdmin()) { ?>
-                                        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline mr-2">Edit</button>
+                                        <a href="editUser.php?name=<?php echo $data[0]?>&email=<?php echo $data[1]?>&pass=<?php echo $data[2]?>" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline mr-2">Edit</a>
                                         <a href="delete.php?name=<?php echo $data[0]?>&email=<?php echo $data[1]?>&pass=<?php echo $data[2]?>" class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline">
                                         Delete</a>
                                     <?php } elseif (isEditor()) { ?>
 
-                                        <button  class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline mr-2">Edit</button>
+                                        <a href="editUser.php?name=<?php echo $data[0]?>&email=<?php echo $data[1]?>&pass=<?php echo $data[2]?>"  class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded focus:outline-none focus:shadow-outline mr-2">Edit</a>
 
                                     <?php } ?>
 
