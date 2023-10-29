@@ -18,7 +18,7 @@ if (!isAdmin() && !isUser()) {
         $_SESSION['user'] = false;
         
         if ($fp) {
-            $data = "\n{$username},{$email},{$password}";
+            $data = "{$username},{$email},{$password}\n";
             fwrite($fp, $data);
             $_SESSION['loginuser'] = true;
             $_SESSION['user'] = $username;
