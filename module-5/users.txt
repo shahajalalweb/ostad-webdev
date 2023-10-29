@@ -1,2 +1,6 @@
-admin,d033e22ae348aeb5660fc2140aec35850c4da997,admin
-editor,ab41949825606da179db7c89ddcedcc167b64847,editor
+mahmudul,mahmudul@gmail.com,mahmudul
+samim,samim@gmail.com,samim
+badsha,badsha@gmail.com,badsha
+badsha4,badsha4@gmail.com,badsha4
+badsha5,badsha5@gmail.com,badsha5
+badsha6,badsha6@gmail.com,badsha6

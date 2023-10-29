@@ -6,9 +6,13 @@ function isAdmin() {
 
 
 function isEditor() {
-    return ('editor' == isset($_SESSION['role']) && 'editor' == $_SESSION['role']);
+    return ('manager' == isset($_SESSION['role']) && 'manager' == $_SESSION['role']);
 }
 
+
+function isUser () {
+    return (isset($_SESSION['loginuser']));
+}
 
 
 

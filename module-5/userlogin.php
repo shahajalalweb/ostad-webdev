@@ -2,7 +2,7 @@
 
 session_start();
 
-if (isset($_SESSION['login']) && $_SESSION['login']) {
+if (isset($_SESSION['loginuser']) && $_SESSION['loginuser']) {
     header("Location: index.php");
     die;
 }
@@ -13,26 +13,22 @@ $error = false;
 $username = filter_input( INPUT_POST, 'username' );
 $password = filter_input( INPUT_POST, 'password' );
 
-$fileOpen = fopen("./adminmanager.txt", "r");
+$fileOpen = fopen("./users.txt", "r");
 
 if ($username && $password) {
-    $_SESSION['login'] = false;
+    $_SESSION['loginuser'] = false;
     $_SESSION['user'] = false;
-    $_SESSION['role'] = false;
 
     while ($data = fgetcsv($fileOpen)) {
          
-            if ($data[0] == $username && $data[1] == sha1($password)) {
-        
-                $_SESSION['login'] = true;
-                $_SESSION['userlogin'] = true;
+            if ($data[0] == $username && $data[2] == $password) {
+                $_SESSION['loginuser'] = true;
                 $_SESSION['user'] = $username;
-                $_SESSION['role'] = $data[2];
                 header('location: index.php');
         
             }
         }
-        if (!$_SESSION['login']) {
+        if (!isset($_SESSION['loginuser'])) {
             $error = true;
         }
 
@@ -57,9 +53,9 @@ if ($username && $password) {
 <body class="bg-gray-100 flex items-center justify-center h-screen">
     <div class="bg-white rounded-lg shadow p-8 w-1/2">
 
-        <h2 class="text-2xl font-bold text-gray-800 mb-4">Admin Manager Login</h2>
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">User Login</h2>
 
-        <form action="login.php" method="post">
+        <form action="userlogin.php" method="post">
 
             <p class="text-red-500">
 
