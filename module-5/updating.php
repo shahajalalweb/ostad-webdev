@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $updateName = $_POST["username"];
     $updateEmail = $_POST["email"];
     $updatePass = $_POST["password"];
+    $updatePass = sha1($updatePass);
 
     $newData = "{$updateName},{$updateEmail},{$updatePass}";
 }  

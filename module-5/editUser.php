@@ -14,6 +14,7 @@ if (isset($_GET['name']) && isset($_GET['email']) && isset($_GET['pass'])) {
     $name = $_GET['name'];
     $email = $_GET['email'];
     $pass = $_GET['pass'];
+    // $pass = sha1($pass);
 
     $_SESSION['oldData'] = "{$name},{$email},{$pass}";
 
@@ -40,15 +41,15 @@ if (isset($_GET['name']) && isset($_GET['email']) && isset($_GET['pass'])) {
         <form action="updating.php" method="post">
             <div class="mb-4">
                 <label for="username" class="block text-gray-600">Username:</label>
-                <input placeholder="<?php echo $name ?>" type="text" id="username" name="username" class="w-full border border-gray-300 p-2 rounded-lg">
+                <input placeholder="<?php echo $name ?>" type="text" id="username" name="username" class="w-full border border-gray-300 p-2 rounded-lg" required>
             </div>
             <div class="mb-4">
                 <label for="email" class="block text-gray-600">Email:</label>
-                <input placeholder="<?php echo $email ?>" type="email" id="email" name="email" class="w-full border border-gray-300 p-2 rounded-lg">
+                <input placeholder="<?php echo $email ?>" type="email" id="email" name="email" class="w-full border border-gray-300 p-2 rounded-lg" required>
             </div>
             <div class="mb-4">
                 <label for="password" class="block text-gray-600">Password:</label>
-                <input placeholder="<?php echo $pass ?>" type="password" id="password" name="password" class="w-full border border-gray-300 p-2 rounded-lg">
+                <input type="password" id="password" name="password" class="w-full border border-gray-300 p-2 rounded-lg" required>
             </div>
             <button type="submit" class="bg-blue-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring">updated</button>
         </form>

@@ -1,6 +1,2 @@
-samimvai,samimvai@gmail.com,samimvai
-badsha1,badsha1@gmail.com,badsha1
-badsha5,badsha5@gmail.com,badsha5
-badsha6,badsha6@gmail.com,badsha6
-samim,samim@gmail.com,samim
-helloword,helloword@gmail.com,helloword
+badsha2,badsha2@gmail.com,4f9d7d47b67b5941f40fcd7916dd3e3f51fb6278
+badshavai,vaia@gmail.com,71011165e6f4116d3943a7b5ef8446c02f10ea7f

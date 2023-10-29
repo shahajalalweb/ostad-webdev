@@ -21,7 +21,7 @@ if ($username && $password) {
 
     while ($data = fgetcsv($fileOpen)) {
          
-            if ($data[0] == $username && $data[2] == $password) {
+            if ($data[0] == $username && $data[2] == sha1($password)) {
                 $_SESSION['loginuser'] = true;
                 $_SESSION['user'] = $username;
                 header('location: index.php');
